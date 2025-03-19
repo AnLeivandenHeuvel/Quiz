@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klimaat Quiz</title>
+    <title>oorzaken</title>
     <link rel="stylesheet" href="css/oorzaken.css">
     <script src="java/oorzaken.js" defer></script>
 </head>
@@ -25,15 +25,17 @@
     </div>
  
     <main>
-        <h1></h1>
-        <img src="img/energiebronnen.jpg" alt="Energiebronnen">
+       
+        <h1> Wat is de belangrijkste oorzaak van de huidige klimaatverandering?</h1>
+        <img src="img/oorzaken_1.jpg" alt="">
         <div class="options">
-            <button onclick="selectOption('Steenkool')">A) Steenkool</button>
-            <button onclick="selectOption('Aardgas')">B) Aardgas</button>
-            <button onclick="selectOption('Zonne-energie')">C) Zonne-energie</button>
-            <button onclick="selectOption('Olie')">D) Olie</button>
+            <button onclick="selectOption('Natuurlijke klimaatcycli')">A) Natuurlijke klimaatcycli</button>
+            <button onclick="selectOption('Menselijke activiteiten, zoals het verbranden van fossiele brandstoffen')">B)  Menselijke activiteiten, zoals het verbranden van fossiele brandstoffen</button>
+            <button onclick="selectOption('Vulkaanuitbarstingen')">C) Vulkaanuitbarstingen</button>
+            
         </div>
         <p id="feedback" class="feedback"></p>
+        <button id="nextButton" onclick="nextQuestion()" style="display: block;">Volgende Vraag</button>
     </main>
  
       </main>

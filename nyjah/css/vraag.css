@@ -4,6 +4,10 @@ body {
     font-family: Arial, sans-serif;
 }
  
+a{
+    background-color: #7AB3EA;
+}
+ 
 .navbar {
     display: flex;
     justify-content: center;
@@ -37,6 +41,7 @@ body {
     font-family: inherit;
     margin: 0;
     cursor: pointer;
+    background-color: #7AB3EA;
 }
  
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -50,7 +55,7 @@ body {
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     left: 0;
-    top: 100%; 
+    top: 100%;
     z-index: 1;
 }
  
@@ -72,46 +77,51 @@ body {
  
 .navbar img {
     position: absolute;
-    right: 20px; 
-    top: 50%;
+    right: 20px;
+    top: 30%;
     transform: translateY(-50%);
     width: 100px;
 }
-
-.quiz-container {
+ 
+main {
+    background-color:#8A6642;
+    padding: 20px;
     text-align: center;
-    margin: 20px;
 }
-.question-container {
-    margin-bottom: 20px;
+ 
+h1{
+    color: white;
 }
-.question-image {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+ 
+img{
+    width: 150;
+    height: 150;
+    margin: 20px 0;
 }
-#nextButton {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+ 
+.options {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-
-.option-button {
-    background-color: lightblue;
-    border: none;
+ 
+.options button{
+    background-color: #7AB3EA;
     color: black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px;
+    border: none;
+    padding: 10px;
+    margin: 5px;
     cursor: pointer;
-    border-radius: 5px;
 }
-.feedback {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #333;
+ 
+.options button:hover{
+    background-color: blue;
+}
+ 
+footer{
+    color: black;
+    margin-top: 100px;
+    background-color: #07560A;
+    height: 50px;
+    text-align: center;
 }

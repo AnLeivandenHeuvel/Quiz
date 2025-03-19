@@ -24,12 +24,23 @@
         <img src="img/logo.png" alt="Logo" width="100">
     </div>
 
-    <div class="quiz-container">
-        <h2>Klimaat Quiz</h2>
+    <main>
+        <h1>Welke van de volgende energiebronnen is hernieuwbaar?</h1>
+        <img src="img/energiebronnen.jpg" alt="Energiebronnen">
+        <div class="options">
+            <button onclick="selectOption('Steenkool')">A) Steenkool</button>
+            <button onclick="selectOption('Aardgas')">B) Aardgas</button>
+            <button onclick="selectOption('Zonne-energie')">C) Zonne-energie</button>
+            <button onclick="selectOption('Olie')">D) Olie</button>
+        </div>
+        <p id="feedback" class="feedback"></p>
+        <button id="next-button" onclick="nextQuestion()">Volgende</button>
         <div id="quiz"></div>
-        <button id="nextButton" onclick="nextQuestion()" style="display:none;">Volgende Vraag</button>
-        <p id="result" class="feedback"></p>
-    </div>
+      </main>
 
+      <footer>
+        <p>@Klimaatquiz</p>
+      </footer>
+       
 </body>
 </html>
