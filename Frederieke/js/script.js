@@ -1,10 +1,12 @@
-function checkAnswer(answer) {
-    let feedback = document.getElementById("feedback");
-    if (answer === "juist") {
-        feedback.innerHTML = "✅ Correct! Klimaatverandering veroorzaakt verzuring van het zeewater.";
-        feedback.style.color = "green";
+function selectOption(selectedOption) {
+    const correctAnswer = 'Zonne-energie'; // Het juiste antwoord
+    const feedbackElement = document.getElementById("feedback");
+ 
+    if (selectedOption === correctAnswer) {
+        feedbackElement.textContent = "Correct!";
+        feedbackElement.style.color = "green";
     } else {
-        feedback.innerHTML = "❌ Fout! Probeer het opnieuw.";
-        feedback.style.color = "red";
+        feedbackElement.textContent = "Incorrect! Het juiste antwoord is: " + correctAnswer;
+        feedbackElement.style.color = "red";
     }
 }

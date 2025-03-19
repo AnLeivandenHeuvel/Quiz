@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oorzaken van klimaatverandering</title>
     <link rel="stylesheet" href="css/quizpagina.css">
+    <script src="js/script.js"></script>
     
 </head>
 <body>
@@ -27,14 +28,17 @@
  </header>
  <main>
   
-  <h1>Wat is een gevolg van klimaatverandering voor de oceaan?</h1>
- <img src="fotos/ocean-waves 1.png" alt="oceaan?">
-  <div class="options">
-    <button>A) Afname van de zeespiegel</button>
-    <button>B) Verzuring van zeewater</button>
-    <button>C) Afname van de watertemperatuur</button>
-  </div>
- </main>
+  <main>
+    <h1>Welke van de volgende energiebronnen is hernieuwbaar?</h1>
+    <img src="img/energiebronnen.jpg" alt="Energiebronnen">
+    <div class="options">
+        <button onclick="selectOption('Steenkool')">A) Steenkool</button>
+        <button onclick="selectOption('Aardgas')">B) Aardgas</button>
+        <button onclick="selectOption('Zonne-energie')">C) Zonne-energie</button>
+        <button onclick="selectOption('Olie')">D) Olie</button>
+    </div>
+    <p id="feedback" class="feedback"></p>
+</main>
 
  
  
