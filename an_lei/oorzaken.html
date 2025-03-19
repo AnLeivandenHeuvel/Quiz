@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klimaat Quiz</title>
+    <link rel="stylesheet" href="css/oorzaken.css">
+    <script src="java/oorzaken.js" defer></script>
   
 </head>
 <body>
-
-   
     <div class="navbar">
         <a href="#">Home</a>
         <div class="dropdown">
@@ -25,13 +25,14 @@
 
 
     <div class="quiz-container">
-        <p class="question">Wat is een gevolg van klimaatverandering voor de oceaan?</p>
-        <img src="https://source.unsplash.com/300x200/?ocean,climate" alt="Oceaan">
+        <p class="question">Wat is de belangrijkste oorzaak van de huidige klimaatverandering?</p>
+        <img src="img/img1.webp" alt="Oceaan" class="img1">
         
+
         <div class="options">
-            <div class="option" onclick="checkAnswer('fout')">a) Afname van de zeespiegel</div>
-            <div class="option" onclick="checkAnswer('juist')">b) Verzuring van het zeewater</div>
-            <div class="option" onclick="checkAnswer('fout')">c) Afname van de watertemperatuur</div>
+            <div class="option" onclick="checkAnswer('fout')">a)  Natuurlijke klimaatcycli</div>
+            <div class="option" onclick="checkAnswer('juist')">b) Menselijke activiteiten, zoals het verbranden van fossiele brandstoffen</div>
+            <div class="option" onclick="checkAnswer('fout')">c) Vulkaanuitbarstingen</div>
         </div>
 
         <p id="feedback"></p>
@@ -40,18 +41,7 @@
     <!-- Footer -->
     <div class="footer">@klimaatquizz</div>
 
-    <script>
-        function checkAnswer(answer) {
-            let feedback = document.getElementById("feedback");
-            if (answer === "juist") {
-                feedback.innerHTML = "✅ Correct! Klimaatverandering veroorzaakt verzuring van het zeewater.";
-                feedback.style.color = "green";
-            } else {
-                feedback.innerHTML = "❌ Fout! Probeer het opnieuw.";
-                feedback.style.color = "red";
-            }
-        }
-    </script>
+
 
 </body>
 </html>
