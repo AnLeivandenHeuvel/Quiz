@@ -7,15 +7,16 @@ const quizQuestions = [
     },
     {
         question: "2.	Heeft klimaatverandering invloed op extreme weersomstandigheden, zoals hittegolven en orkanen?",
-        image: "fotos/extreem.jpg",
+        image: "fotos/European-flooding.jpg",
         options: ["Nee", "Ja"],
         correct: "Ja"
     },
     {
-        question: "3.	Welke regio’s worden het hardst getroffen door klimaatverandering?",
-        image: "fotos/poolgebieden.jpg",
-        options: ["A) Poolgebieden", "B) Tropische eilanden", "C) Droge gebiedem (zoals Sahel)", "D) Alle bovenstaande"],
-        correct: "D) Alle bovenstaande"
+        question: "3. Welke sector wordt het meest beïnvloed door ",
+        image: "fotos/biodiversiteit.jpg",
+        options: ["A) Landbouw", "B) Gezondheidszorg", "C) Toerisme", "D) Alle bovenstaande"],
+        correct: "Ja" 
+        
     },
     {
         question: "4.	Is klimaatverandering een bedreiging voor de biodiversiteit? (Ja/Nee)",
@@ -28,6 +29,42 @@ const quizQuestions = [
         image: "fotos/klimaatverandering.jpg",
         options: ["A) Verzuring van oceanen", "B) Toename van zonneactiviteit", "C) Uitstervem van diersoorten", "D) Smelten van gletsjers"],
         correct: "B) Toename van zonneactiviteit" 
+    },
+    {
+        question: "6. Kan klimaatverandering sociale en economische ongelijkheid vergroten?",
+        image: "fotos/klimaatverandering.jpg",
+        options: ["Ja", "Nee"],
+        correct: "Ja" 
+    },
+    {
+        question: "7. Heeft klimaatverandering invloed op de volksgezondheid, zoals de verspreiding van ziekten?",
+        image: "fotos/klimaatverandering.jpg",
+        options: ["Ja", "Nee"],
+        correct: "Ja" 
+    },
+    {
+        question: "8. Verhoogt klimaatverandering het risico op bosbranden?",
+        image: "fotos/klimaatverandering.jpg",
+        options: ["Ja", "Nee"],
+        correct: "Ja"
+
+ 
+    },
+    {
+        question: "9. Kan klimaatverandering leiden tot voedseltekorten? (Ja/Nee)",
+        image: "fotos/klimaatverandering.jpg",
+        options: ["Ja", "Nee"],
+        correct: "Ja"
+ 
+    },
+    {
+        question: "10. Welke van de volgende is géén direct gevolg van klimaatverandering?",
+        image: "fotos/klimaatverandering.jpg",
+        options: ["A) Stijgende zeespiegel", "B) Meer aardbevingen", "C) Extreme weersomstandigheden"],
+        correct: "B)"
+ 
+
+
     }
    
 
@@ -44,6 +81,7 @@ function loadQuestion() {
     ).join("");
     document.getElementById("feedback").textContent = "";
     document.getElementById("next-button").style.display = "none";
+    
 }
  
 function selectOption(selected) {
