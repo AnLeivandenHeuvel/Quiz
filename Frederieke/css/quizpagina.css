@@ -2,10 +2,7 @@ body {
     background-color: #8A6642;
     margin: 0;
     font-family: Arial, sans-serif;
-}
-
-a{
-    background-color: #7AB3EA;
+    text-align: center;
 }
  
 .navbar {
@@ -37,11 +34,9 @@ a{
     outline: none;
     color: white;
     padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-    cursor: pointer;
     background-color: #7AB3EA;
+    font-family: inherit;
+    cursor: pointer;
 }
  
 .navbar a:hover, .dropdown:hover .dropbtn {
@@ -55,7 +50,7 @@ a{
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     left: 0;
-    top: 100%; 
+    top: 100%;
     z-index: 1;
 }
  
@@ -77,53 +72,153 @@ a{
  
 .navbar img {
     position: absolute;
-    right: 20px; 
+    right: 20px;
     top: 30%;
-    transform: translateY(-50%);
-    width: 100px;
+    transform: translateY(-60%);
+    width: 70px;
 }
-
+ 
 main {
-    background-color:#8A6642;
+    background-color: #8A6642;
     padding: 20px;
-    text-align: center;
 }
-
-h1{
+ 
+h1 {
     color: white;
+    font-size: 24px;
 }
-
-img{
-    width: 100;
+ 
+img {
+    width: 300px;
     height: auto;
     margin: 20px 0;
 }
-
+ 
 .options {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
-
-.options button{
+ 
+.options button {
     background-color: #7AB3EA;
     color: black;
     border: none;
-    padding: 10px;
+    padding: 15px;
     margin: 5px;
     cursor: pointer;
+    width: 1000px;
+    font-size: 18px;
 }
-
-.options button:hover{
+ 
+.options button:hover {
     background-color: blue;
+    color: white;
 }
-
-footer{
+ 
+#next-button {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 12px 24px;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: white;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+  }
+ 
+  #next-button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid #07560A;
+  }
+ 
+  #next-button {
+    padding: 0.9em 1.8em;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    color: transparent;
+    border: 3px solid #87CEEB;
+    font-size: 14px;
+    position: relative;
+    font-family: inherit;
+    background: transparent;
+    cursor: pointer;
+    display: none;
+  }
+ 
+  #next-button::before {
+    content: "Volgende";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #07560A;
+    color: #87CEEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+  }
+ 
+  #next-button:hover::before {
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+  }
+ 
+  #next-button::after {
+    content: "Volgende";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #07560A;
+    color: #87CEEB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    transform: scale(0) rotateY(0deg);
+    opacity: 0;
+  }
+ 
+  #next-button:hover::after {
+    left: 0;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
+  }
+ 
+.feedback {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+ 
+footer {
     color: black;
     margin-top: 100px;
     background-color: #07560A;
     height: 50px;
     text-align: center;
-    
+    line-height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
