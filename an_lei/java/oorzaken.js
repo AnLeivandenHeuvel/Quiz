@@ -56,9 +56,9 @@ const quizQuestions = [
 ];
 
 let currentQuestionIndex = 0;
+let score = 0;
 
 function loadQuestion() {
-
     const { question, image, options } = quizQuestions[currentQuestionIndex];
     document.querySelector("main h1").textContent = question;
     document.querySelector("main img").src = image;
@@ -71,8 +71,14 @@ function loadQuestion() {
 
 function selectOption(selected) {
     const correct = quizQuestions[currentQuestionIndex].correct;
-    document.getElementById("feedback").textContent = selected === correct ? "Correct!" : `Incorrect! Het juiste antwoord is: ${correct}`;
-    document.getElementById("feedback").style.color = selected === correct ? "green" : "red";
+    if (selected === correct) {
+        document.getElementById("feedback").textContent = "Correct!";
+        document.getElementById("feedback").style.color = "green";
+        score++;
+    } else {
+        document.getElementById("feedback").textContent = `Incorrect! Het juiste antwoord is: ${correct}`;
+        document.getElementById("feedback").style.color = "red";
+    }
     document.getElementById("next-button").style.display = "block";
 }
 
@@ -81,8 +87,13 @@ function nextQuestion() {
         currentQuestionIndex++;
         loadQuestion();
     } else {
-        document.querySelector("main").innerHTML = "<h1>Quiz voltooid!</h1><p>Bedankt voor het spelen.</p>";
+        document.querySelector("main").innerHTML = `<h1>Quiz voltooid!</h1><p>Je score: ${score}/${quizQuestions.length}</p><button onclick="goHome()">Terug naar Home</button>`;
+        score = 0; // Score resetten na voltooiing
     }
+}
+
+function goHome() {
+    window.location.href = "../quizzz/home.html";
 }
 
 document.addEventListener("DOMContentLoaded", loadQuestion);
