@@ -13,7 +13,7 @@ const quizQuestions = [
     },
     {
         question: "3. Welke sector wordt het meest beïnvloed door ",
-        image: "fotos/biodiversiteit.jpg",
+        image: "fotos/sector.jpg",
         options: ["A) Landbouw", "B) Gezondheidszorg", "C) Toerisme", "D) Alle bovenstaande"],
         correct: "Ja" 
         
@@ -32,19 +32,19 @@ const quizQuestions = [
     },
     {
         question: "6. Kan klimaatverandering sociale en economische ongelijkheid vergroten?",
-        image: "fotos/klimaatverandering.jpg",
+        image: "fotos/ongelijkheid.jpg",
         options: ["Ja", "Nee"],
         correct: "Ja" 
     },
     {
         question: "7. Heeft klimaatverandering invloed op de volksgezondheid, zoals de verspreiding van ziekten?",
-        image: "fotos/klimaatverandering.jpg",
+        image: "fotos/gemeente.png",
         options: ["Ja", "Nee"],
         correct: "Ja" 
     },
     {
         question: "8. Verhoogt klimaatverandering het risico op bosbranden?",
-        image: "fotos/klimaatverandering.jpg",
+        image: "fotos/bosbranden.jpg",
         options: ["Ja", "Nee"],
         correct: "Ja"
 
@@ -52,14 +52,14 @@ const quizQuestions = [
     },
     {
         question: "9. Kan klimaatverandering leiden tot voedseltekorten? (Ja/Nee)",
-        image: "fotos/klimaatverandering.jpg",
+        image: "fotos/voedseltekort.jpg",
         options: ["Ja", "Nee"],
         correct: "Ja"
  
     },
     {
         question: "10. Welke van de volgende is géén direct gevolg van klimaatverandering?",
-        image: "fotos/klimaatverandering.jpg",
+        image: "fotos/extreem.jpg",
         options: ["A) Stijgende zeespiegel", "B) Meer aardbevingen", "C) Extreme weersomstandigheden"],
         correct: "B)"
  
@@ -71,6 +71,7 @@ const quizQuestions = [
 ];
  
 let currentQuestionIndex = 0;
+let userAnswers = [];
  
 function loadQuestion() {
     const { question, image, options } = quizQuestions[currentQuestionIndex];
@@ -79,21 +80,45 @@ function loadQuestion() {
     document.querySelector(".options").innerHTML = options.map(option =>
         `<button onclick="selectOption('${option}')">${option}</button>`
     ).join("");
-    document.getElementById("feedback").textContent = "";
     document.getElementById("next-button").style.display = "none";
-    
 }
  
 function selectOption(selected) {
-    const correct = quizQuestions[currentQuestionIndex].correct;
-    document.getElementById("feedback").textContent = selected === correct ? "Correct!" : `Incorrect! Het juiste antwoord is: ${correct}`;
-    document.getElementById("feedback").style.color = selected === correct ? "green" : "red";
+    userAnswers.push(selected);
     document.getElementById("next-button").style.display = "block";
 }
  
 function nextQuestion() {
-    currentQuestionIndex++ < quizQuestions.length - 1 ? loadQuestion() :
-        document.querySelector("main").innerHTML = "<h1>Quiz voltooid!</h1><p>Bedankt voor het spelen.</p>";
+    if (currentQuestionIndex < quizQuestions.length - 1) {
+        currentQuestionIndex++;
+        loadQuestion();
+    } else {
+        showResults();
+    }
+}
+ 
+function showResults() {
+    let score = userAnswers.filter((answer, index) => answer === quizQuestions[index].correct).length;
+   
+    let resultHTML = `<h1>Quiz voltooid!</h1>
+                      <p>Je eindscore is: ${score} van de ${quizQuestions.length}</p>
+                      <h2>Juiste antwoorden:</h2>
+                      <ul>`;
+ 
+    quizQuestions.forEach((q, index) => {
+        resultHTML += `<li><strong>Vraag ${index + 1}:</strong> ${q.question}<br>
+                       <strong>Jouw antwoord:</strong> ${userAnswers[index]}<br>
+                       <strong>Correct antwoord:</strong> ${q.correct}</li><br>`;
+    });
+ 
+    resultHTML += `</ul><button onclick="goHome()">Terug naar Home</button>`;
+    document.querySelector("main").innerHTML = resultHTML;
+    userAnswers = []; // Reset antwoorden
+}
+ 
+function goHome() {
+    window.location.href = "../quizzz/home.html";
 }
  
 document.addEventListener("DOMContentLoaded", loadQuestion);
+ 
