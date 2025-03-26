@@ -48,15 +48,15 @@ const quizQuestions = [
         correct: "ja"
     },
     {
-        question: "Welke van de volgende gevolgen wordt geassocieerd met klimaatverandering?",
-        image: "img/vraag9.jpg",
-        options: ["Lagere zeespiegel", "Extreem weer, zoals hittegolven en stormen", "Minder droogte", "Koudere temperaturen wereldwijd"],
-        correct: "Extreem weer, zoals hittegolven en stormen"
+        question: "Welke energiebron is het meest milieuvriendelijk?",
+        image: "img/vraag10.jpg",
+        options: ["Steenkool", "Aardgas", "Windenergie", "Kernenergie"],
+        correct: "Windenergie"
     }
 ];
 
 let currentQuestionIndex = 0;
-let score = 0;
+let userAnswers = [];
 
 function loadQuestion() {
     const { question, image, options } = quizQuestions[currentQuestionIndex];
@@ -65,20 +65,11 @@ function loadQuestion() {
     document.querySelector(".options").innerHTML = options.map(option =>
         `<button onclick="selectOption('${option}')">${option}</button>`
     ).join("");
-    document.getElementById("feedback").textContent = "";
     document.getElementById("next-button").style.display = "none";
 }
 
 function selectOption(selected) {
-    const correct = quizQuestions[currentQuestionIndex].correct;
-    if (selected === correct) {
-        document.getElementById("feedback").textContent = "Correct!";
-        document.getElementById("feedback").style.color = "green";
-        score++;
-    } else {
-        document.getElementById("feedback").textContent = `Incorrect! Het juiste antwoord is: ${correct}`;
-        document.getElementById("feedback").style.color = "red";
-    }
+    userAnswers.push(selected);
     document.getElementById("next-button").style.display = "block";
 }
 
@@ -87,9 +78,27 @@ function nextQuestion() {
         currentQuestionIndex++;
         loadQuestion();
     } else {
-        document.querySelector("main").innerHTML = `<h1>Quiz voltooid!</h1><p>Je score: ${score}/${quizQuestions.length}</p><button onclick="goHome()">Terug naar Home</button>`;
-        score = 0; // Score resetten na voltooiing
+        showResults();
     }
+}
+
+function showResults() {
+    let score = userAnswers.filter((answer, index) => answer === quizQuestions[index].correct).length;
+   
+    let resultHTML = `<h1>Quiz voltooid!</h1>
+                      <p>Je eindscore is: ${score} van de ${quizQuestions.length}</p>
+                      <h2>Juiste antwoorden:</h2>
+                      <ul>`;
+
+    quizQuestions.forEach((q, index) => {
+        resultHTML += `<li><strong>Vraag ${index + 1}:</strong> ${q.question}<br>
+                       <strong>Jouw antwoord:</strong> ${userAnswers[index]}<br>
+                       <strong>Correct antwoord:</strong> ${q.correct}</li><br>`;
+    });
+
+    resultHTML += `</ul><button onclick="goHome()">Terug naar Home</button>`;
+    document.querySelector("main").innerHTML = resultHTML;
+    userAnswers = []; // Reset antwoorden
 }
 
 function goHome() {
