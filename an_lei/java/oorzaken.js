@@ -48,6 +48,12 @@ const quizQuestions = [
         correct: "ja"
     },
     {
+        question: "Welke van de volgende gevolgen wordt geassocieerd met klimaatverandering?",
+        image: "img/vraag9.jpg",
+        options: ["Lagere zeespiegel", "Extreem weer, zoals hittegolven en stormen", "Minder droogte", "Koudere temperaturen wereldwijd"],
+        correct: "Extreem weer, zoals hittegolven en stormen"
+    },
+    {
         question: "Welke energiebron is het meest milieuvriendelijk?",
         image: "img/vraag10.jpg",
         options: ["Steenkool", "Aardgas", "Windenergie", "Kernenergie"],
