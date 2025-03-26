@@ -1,43 +1,43 @@
 const quizQuestions = [
     {
         question: "Is het verminderen van fossiele brandstoffen een effectieve manier om klimaatverandering tegen te gaan?",
-        image: "img/energiebronnen.jpg",
+        image: "img/vraag1.jpeg",
         options: ["Ja", "Nee"],
         correct: "Ja"
     },
     {
         question: "Draagt hernieuwbare energie bij aan het verminderen van CO₂-uitstoot?",
-        image: "img/klimaatverandering.jpg",
+        image: "img/vraag2.jpeg",
         options: ["Ja", "Nee"],
         correct: "Ja"
     },
     {
         question: "Welke vorm van hernieuwbare energie is het meest gebruikt wereldwijd?",
-        image: "img/energiebronnen.jpg",
+        image: "img/vraag3.jpeg",
         options: ["Zonne-energie", "Windenergie", "Waterkracht", "Geothermische energie"],
         correct: "Waterkracht"
     },
     {
         question: "Kan het planten van bomen helpen bij het bestrijden van klimaatverandering?",
-        image: "img/bomen.jpg",
+        image: "img/vraag4.jpeg",
         options: ["Ja", "Nee"],
         correct: "Ja"
     },
     {
         question: "Leidt energie-efficiëntie in huishoudens tot een lagere CO₂-uitstoot?",
-        image: "img/energiezuinig.jpg",
+        image: "img/vraag5.jpeg",
         options: ["Ja", "Nee"],
         correct: "Ja"
     },
     {
         question: "Is elektrisch rijden beter voor het milieu dan benzine- en dieselauto’s?",
-        image: "img/elektrischeauto.jpg",
+        image: "img/vraag6.jpeg",
         options: ["Ja", "Nee"],
         correct: "Ja"
     },
     {
         question: "Wat is een effectieve manier om minder CO₂ uit te stoten in de landbouw?",
-        image: "img/landbouw.jpg",
+        image: "img/vraag7.jpeg",
         options: [
             "Minder vleesconsumptie",
             "Meer kunstmest gebruiken",
@@ -48,13 +48,13 @@ const quizQuestions = [
     },
     {
         question: "Helpen subsidies voor duurzame energie bij de energietransitie?",
-        image: "img/subsidies.jpg",
+        image: "img/vraag8.jpeg",
         options: ["Ja", "Nee"],
         correct: "Ja"
     },
     {
         question: "Welke actie heeft de grootste impact op het verminderen van de CO₂-uitstoot?",
-        image: "img/co2verminderen.jpg",
+        image: "img/vraag9.jpeg",
         options: [
             "Overschakelen op hernieuwbare energie",
             "Minder vliegen",
@@ -65,7 +65,7 @@ const quizQuestions = [
     },
     {
         question: "Kan klimaatverandering volledig worden teruggedraaid als we nu stoppen met CO₂-uitstoot?",
-        image: "img/klimaat.jpg",
+        image: "img/vraag10.jpeg",
         options: ["Ja", "Nee"],
         correct: "Nee"
     }
