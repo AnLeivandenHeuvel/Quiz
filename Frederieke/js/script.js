@@ -72,7 +72,7 @@ const quizQuestions = [
  
 let currentQuestionIndex = 0;
 let userAnswers = [];
- 
+
 function loadQuestion() {
     const { question, image, options } = quizQuestions[currentQuestionIndex];
     document.querySelector("main h1").textContent = question;
@@ -82,12 +82,12 @@ function loadQuestion() {
     ).join("");
     document.getElementById("next-button").style.display = "none";
 }
- 
+
 function selectOption(selected) {
     userAnswers.push(selected);
     document.getElementById("next-button").style.display = "block";
 }
- 
+
 function nextQuestion() {
     if (currentQuestionIndex < quizQuestions.length - 1) {
         currentQuestionIndex++;
@@ -96,7 +96,7 @@ function nextQuestion() {
         showResults();
     }
 }
- 
+
 function showResults() {
     let score = userAnswers.filter((answer, index) => answer === quizQuestions[index].correct).length;
    
@@ -104,21 +104,21 @@ function showResults() {
                       <p>Je eindscore is: ${score} van de ${quizQuestions.length}</p>
                       <h2>Juiste antwoorden:</h2>
                       <ul>`;
- 
+
     quizQuestions.forEach((q, index) => {
         resultHTML += `<li><strong>Vraag ${index + 1}:</strong> ${q.question}<br>
                        <strong>Jouw antwoord:</strong> ${userAnswers[index]}<br>
                        <strong>Correct antwoord:</strong> ${q.correct}</li><br>`;
     });
- 
+
     resultHTML += `</ul><button onclick="goHome()">Terug naar Home</button>`;
     document.querySelector("main").innerHTML = resultHTML;
     userAnswers = []; // Reset antwoorden
 }
- 
+
 function goHome() {
     window.location.href = "../quizzz/home.html";
 }
- 
+
 document.addEventListener("DOMContentLoaded", loadQuestion);
  
