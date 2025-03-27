@@ -222,3 +222,8 @@ footer {
     right: 0;
 }
 
+.selected {
+    background-color: blue !important;
+    color: white !important;
+}
+
