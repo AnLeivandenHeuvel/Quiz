@@ -72,7 +72,7 @@ const quizQuestions = [
 ];
 
 let currentQuestionIndex = 0;
-let userAnswers = []; 
+let userAnswers = [];
 
 function loadQuestion() {
     const { question, image, options } = quizQuestions[currentQuestionIndex];
@@ -92,14 +92,12 @@ function loadQuestion() {
 }
 
 function selectOption(button, selected) {
-    userAnswers[currentQuestionIndex] = selected; 
+    userAnswers[currentQuestionIndex] = selected;
 
-    
     document.querySelectorAll(".options button").forEach(btn => {
         btn.classList.remove("selected");
     });
 
-    
     button.classList.add("selected");
 
     document.getElementById("next-button").style.display = "block";
@@ -116,20 +114,31 @@ function nextQuestion() {
 
 function showResults() {
     let score = userAnswers.filter((answer, index) => answer === quizQuestions[index].correct).length;
-    
-    let resultHTML = `<h1>Quiz voltooid!</h1>
-                      <p>Je eindscore is: ${score} van de ${quizQuestions.length}</p>
-                      <h2>Juiste antwoorden:</h2>
-                      <ul>`;
+    let quizName = "quiz3"; 
 
-    quizQuestions.forEach((q, index) => {
-        resultHTML += `<li><strong>Vraag ${index + 1}:</strong> ${q.question}<br>
-                       <strong>Jouw antwoord:</strong> ${userAnswers[index]}<br>
-                       <strong>Correct antwoord:</strong> ${q.correct}</li><br>`;
-    });
+    let resultHTML = `
+        <h1>Quiz voltooid!</h1>
+        <p>Je eindscore is: ${score} van de ${quizQuestions.length}</p>
+        <label for="username">Vul je naam in:</label>
+        <input type="text" id="username" placeholder="Jouw naam">
+        <button onclick="saveScore('${quizName}', ${score})">Opslaan</button>
+    `;
 
-    resultHTML += "</ul>";
     document.querySelector("main").innerHTML = resultHTML;
+}
+
+function saveScore(quizName, score) {
+    let username = document.getElementById("username").value.trim();
+    if (!username) {
+        alert("Voer een naam in!");
+        return;
+    }
+
+    let scores = JSON.parse(localStorage.getItem(quizName)) || [];
+    scores.push({ name: username, score: score });
+
+    localStorage.setItem(quizName, JSON.stringify(scores));
+    window.location.href = "../quizzz/score.html"; 
 }
 
 document.addEventListener("DOMContentLoaded", loadQuestion);

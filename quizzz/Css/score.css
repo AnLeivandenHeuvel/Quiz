@@ -1,0 +1,129 @@
+body {
+    background-color: #8A6642;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #07560A;
+    padding: 10px;
+    position: relative;
+}
+
+.navbar a, .dropdown {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: #7AB3EA;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #7AB3EA;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    left: 0;
+    top: 100%;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar img {
+    position: absolute;
+    right: 20px;
+    top: 30%; 
+    transform: translateY(-60%);
+    width: 70px; 
+}
+
+main {
+    background-color: #8A6642;
+    padding: 20px;
+}
+
+h1 {
+    color: white;
+    font-size: 24px;
+}
+
+img {
+    width: 300px; 
+    height: auto;
+    margin: 20px 0;
+}
+.highscore-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.highscore-box {
+    background-color: #87CEEB;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.highscore-box h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #07560A;
+}
+
+.highscore-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.highscore-box li {
+    background: white;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
