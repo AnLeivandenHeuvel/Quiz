@@ -208,6 +208,11 @@ img {
     font-weight: bold;
     margin-top: 10px;
 }
+.selected {
+    background-color: blue !important;
+    color: white !important;
+}
+ 
 
 footer {
     color: black;
